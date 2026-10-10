@@ -303,7 +303,7 @@ git push -u origin feature/<pinyin>-hello
 
 ### 5.3 Git 协作首次演练（实测证据）
 
-**5.3.1 已完成的 Pull Request（实测）**
+**5.3.1 Pull Request 实测清单**
 
 **表 5-3　PR 实测清单（经 GitHub REST API 核对）**
 
@@ -314,6 +314,9 @@ git push -u origin feature/<pinyin>-hello
 | #3 | `feature/docs-luck970-roster-5p` | luck970 | 1 | 2026-10-10 19:18 | 无 | 已合并 |
 | #4 | `feature/docs-luck970-po-name` | luck970 | 1 | 2026-10-10 19:20 | 无 | 已合并 |
 | #5 | `feature/docs-luck970-interviewees` | luck970 | 1 | 2026-10-10 19:22 | 无 | 已合并 |
+| #6 | `docs/campusoverflow-lab1-report` | luck970 | 1 | —（待评审） | 待评审 | Open |
+
+> 截至 2026-10-10：共 6 个 Pull Request，#1–#5 已合并入 `main`；#6 是**本报告自身**，刻意留在待评审状态，用作 Lab 1 提交物第 4 项“由队友评审后合并”的真实记录。
 
 **5.3.2 主线上与团队文档直接相关的提交**
 
@@ -398,8 +401,8 @@ git push -u origin feature/<pinyin>-hello
 | 仓库协作者数 | 5 | 4–6 | ✅ |
 | 有提交记录的成员 | 4 / 5 | 5 / 5 | ❌ |
 | 有合并 PR 的成员 | 1 / 5 | 5 / 5 | ❌ |
-| PR 总数 / 已合并 | 5 / 5 | ≥ 5 | ✅ |
-| 带评审记录的 PR | 0 / 5 | 100% | ❌ |
+| PR 总数 / 已合并 | 6 / 5（#6 待评审） | ≥ 5 | ✅ |
+| 带评审记录的 PR | 0 / 6 | 100% | ❌ |
 | PR 关联 Issue 的比例 | 0 / 5 | 100% | ❌ |
 | 提交信息符合规约的比例 | 100% | 100% | ✅ |
 | 文档产出 | 22 个文件 | ≥ 5 | ✅ |
@@ -557,13 +560,13 @@ git push -u origin feature/<pinyin>-hello
 
 **B.1.3 建立 Sprint 0 的 3 个 Issue（5 分钟）**
 
-每个 Issue 用"背景—任务—验收标准—不包含内容"四段式写，并设置 Assignee：
+每个 Issue 用"背景—任务—验收标准—不包含内容"四段式写，并设置 Assignee。Issue 编号由 GitHub 自动分配（**Issue 与 PR 共用同一编号序列**），下表只给顺序，以建立后的实际编号为准：
 
-| Issue | 标题 | 负责人 | 验收标准（摘要） |
+| 顺序 | 标题 | 负责人 | 验收标准（摘要） |
 | --- | --- | --- | --- |
-| #6 | [docs] 产出《团队章程 v1.0》并全员签字 | 左焱之 | `docs/team/charter-v1.0.md` 合入 main，commit message 含 5 人签名 |
-| #7 | [chore] 初始化四列看板与分支保护 | 左焱之 | 看板四列可用；`main` 分支保护生效并留截图 |
-| #8 | [docs] 每名成员提交 `docs/team/hello-<name>.md` | 全员 | main 上存在 5 份 hello 文档，每份对应 1 个已评审 PR |
+| 待建 1 | [docs] 产出《团队章程 v1.0》并全员签字 | 左焱之 | `docs/team/charter-v1.0.md` 合入 main，commit message 含 5 人签名 |
+| 待建 2 | [chore] 初始化四列看板与分支保护 | 左焱之 | 看板四列可用；`main` 分支保护生效并留截图 |
+| 待建 3 | [docs] 每名成员提交 `docs/team/hello-<name>.md` | 全员 | main 上存在 5 份 hello 文档，每份对应 1 个已评审 PR |
 
 ### B.2　全体成员（A–E）· hello PR 演练（每人 10 分钟）
 
@@ -587,7 +590,7 @@ git push -u origin feature/<pinyin>-hello
 推送后到 GitHub 点击 **Compare & pull request**：
 
 1. **务必确认 base repository 是 `Flagg32/f26-lab01`、base 分支是 `main`**（不要选到上游课程仓库）；
-2. 标题：`docs(team): add self introduction for <姓名>`；正文写"新增内容 / 为什么 / 如何验证"，并写 `Closes #8`；
+2. 标题：`docs(team): add self introduction for <姓名>`；正文写"新增内容 / 为什么 / 如何验证"，并写 `Closes #<hello 文档对应 Issue 的编号>`；
 3. 右栏 Reviewers 选 1 名队友，Assignees 选自己；
 4. 等队友 LGTM 后由 SM 合并。
 
