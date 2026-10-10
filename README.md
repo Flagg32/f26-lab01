@@ -17,17 +17,23 @@ By the way: the fix may not be where the failing test first points you. :-)
 
 ## Where things are
 
-- Source: `src/main/java/edu/cmu/cs214/booking/` (`domain/`, `service/`, `repo/`)
-- Tests: `src/test/java/edu/cmu/cs214/booking/`
-- Setup: `SETUP.md`
-- Your Milestone 2 task: `TASK.md`
-- A proposed change you will review in Milestone 3: `changes/agent-attempt.patch` (the handout tells you how to apply it)
-- Transcript export script (for Claude Code; modify if using a different tool): `tools/export-transcripts.sh` (the handout tells you when to run it)
+* Source: `src/main/java/edu/cmu/cs214/booking/` (`domain/`, `service/`, `repo/`)
+* Tests: `src/test/java/edu/cmu/cs214/booking/`
+* Setup: `SETUP.md`
+* Your Milestone 2 task: `TASK.md`
+* A proposed change you will review in Milestone 3: `changes/agent-attempt.patch` (the handout tells you how to apply it)
+* Transcript export script (for Claude Code; modify if using a different tool): `tools/export-transcripts.sh` (the handout tells you when to run it)
 
 See the Lab 1 handout on the course page for the three milestones you show a TA.
 
 ## 工具与模型声明
 
-- 工具：AI 编程智能体（本实验会话中使用，用于实现与审查）；Git；Maven；JUnit 5；Claude Code（用于导出会话记录）
-- 模型：<填写会话中实际使用的模型名称>
+* 工具：AI 编程智能体（本实验会话中使用，用于实现与审查）；Git；Maven；JUnit 5；Claude Code（用于导出会话记录）
+* 模型：<填写会话中实际使用的模型名称>
+
+\## 工具与模型声明
+
+\- 工具：Claude Code (命令行)；IDE: IntelliJ IDEA
+
+\- 模型：<填写您实际使用的模型，例如 Claude 3.5 Sonnet>
 
