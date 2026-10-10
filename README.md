@@ -29,4 +29,4 @@ See the Lab 1 handout on the course page for the three milestones you show a TA.
 ## 工具与模型声明
 
 - 工具：AI 编程智能体（本实验会话中使用，用于实现与审查）；Claude Code（命令行，用于导出会话记录）；IDE：IntelliJ IDEA；Git；Maven；JUnit 5
-- 模型：<填写会话中实际使用的模型名称，例如 Claude 3.5 Sonnet>
+- 模型：kimi-k2.6
