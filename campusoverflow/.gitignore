@@ -1,0 +1,47 @@
+# Word 临时锁文件（打开文档时生成，禁止提交）
+~$*
+*.tmp
+
+# 操作系统
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Java / Maven
+target/
+*.class
+.mvn/timing.properties
+
+# Node / 前端
+node_modules/
+dist/
+dist-ssr/
+*.local
+.eslintcache
+
+# 环境变量与密钥（严禁提交，统一用 GitHub Secrets）
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# 日志与本地数据
+*.log
+logs/
+*.db
+*.sqlite
+
+# 老师教学方案（公开仓库不提交，需要时手动加回）
+CampusOverflow软件工程教学方案.docx
+
+
+# 其他人仍在编辑中的暂存文件
+
