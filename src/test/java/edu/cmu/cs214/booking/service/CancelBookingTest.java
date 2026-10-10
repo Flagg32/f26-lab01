@@ -51,4 +51,29 @@ class CancelBookingTest {
         assertEquals(1, store.waitlistForRoom(roomA).size());
         assertEquals(a.id(), svc.listBookings(roomA).get(0).id());
     }
+
+    /**
+     * The promotion test that must fail on a "removal only" implementation: after
+     * cancelling Alice's booking, Bob, who was waitlisted for an overlapping slot,
+     * must now hold the only confirmed booking for the room.
+     */
+    @Test
+    void cancellingPromotesTheWaitlistedUser() {
+        InMemoryBookingStore store = new InMemoryBookingStore();
+        BookingService svc = newService(store);
+        Booking a = assertInstanceOf(
+                BookingResult.Confirmed.class,
+                svc.book(roomA, alice, new TimeInterval(600, 660))).booking();
+        assertInstanceOf(
+                BookingResult.Waitlisted.class,
+                svc.book(roomA, bob, new TimeInterval(630, 700)));
+
+        svc.cancelBooking(a.id());
+
+        assertEquals(1, svc.listBookings(roomA).size());
+        Booking promoted = svc.listBookings(roomA).get(0);
+        assertEquals(bob, promoted.user());
+        assertEquals(new TimeInterval(630, 700), promoted.interval());
+        assertEquals(0, store.waitlistForRoom(roomA).size());
+    }
 }

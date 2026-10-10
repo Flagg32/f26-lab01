@@ -6,6 +6,7 @@ import edu.cmu.cs214.booking.domain.TimeInterval;
 import edu.cmu.cs214.booking.domain.User;
 import edu.cmu.cs214.booking.domain.WaitlistEntry;
 import edu.cmu.cs214.booking.repo.BookingStore;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,14 +51,40 @@ public class BookingService {
 
     /**
      * Cancels the confirmed booking with {@code bookingId}, freeing its slot.
-     * If no booking has that id, does nothing. Promotion of waitlisted users is
-     * handled by {@link #promoteFromWaitlist}.
+     * If no booking has that id, does nothing. After removal, the earliest
+     * waitlisted user (first-come-first-served by {@code seq}) whose interval
+     * does not overlap any remaining confirmed booking is promoted, at most one
+     * per cancellation.
      */
     public void cancelBooking(String bookingId) {
         Optional<Booking> found = store.findBooking(bookingId);
         if (found.isEmpty()) {
             return;
         }
+        Room room = found.get().room();
         store.removeBooking(bookingId);
+        promoteFromWaitlist(room);
+    }
+
+    /**
+     * Promotes the earliest fitting waiter from {@code room}'s waitlist into a
+     * confirmed booking. Skips waiters whose interval still conflicts with a
+     * remaining confirmed booking; promotes at most one.
+     */
+    private void promoteFromWaitlist(Room room) {
+        List<WaitlistEntry> waiters = store.waitlistForRoom(room).stream()
+                .sorted(Comparator.comparingInt(WaitlistEntry::seq))
+                .toList();
+        for (WaitlistEntry entry : waiters) {
+            boolean stillConflicts = store.bookingsForRoom(room).stream()
+                    .anyMatch(b -> b.interval().overlaps(entry.interval()));
+            if (stillConflicts) {
+                continue;
+            }
+            store.removeWaitlistEntry(entry.id());
+            store.addBooking(
+                    new Booking("b" + nextBookingSeq++, room, entry.user(), entry.interval()));
+            break;
+        }
     }
 }
