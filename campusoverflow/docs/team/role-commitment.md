@@ -1,12 +1,12 @@
 # 团队角色承诺书
 
-> 提交人：各成员（签字以 commit message 形式完成）    生效日期：<YYYY-MM-DD>    团队规模：5 人
+> 提交人：各成员（签字以 commit message 形式完成）    生效日期：2026-10-10    团队规模：5 人
 
 ## 一、角色分配（5 人团队）
 
 | 代号 | 姓名 | 角色 | 兼任 | 技术主场 |
 | --- | --- | --- | --- | --- |
-| A | <你的姓名> | Product Owner（PO） | 前端 Dev（Identity / Discovery 前端） | 需求分析、React + TS |
+| A | 唐志烽 | Product Owner（PO） | 前端 Dev（Identity / Discovery 前端） | 需求分析、React + TS |
 | B | 左焱之 | Scrum Master（SM） | DevOps / 部署负责人 | CI/CD、Docker、Prometheus |
 | C | 江思达 | Developer | 后端领域负责人（Identity + Q&A 子域） | Spring Boot 3、DDD、JPA |
 | D | 何心怡 | Developer | 后端实现（Reputation + Discovery 子域） | JPA、Redis、查询优化 |
@@ -21,13 +21,13 @@
 
 ## 二、角色承诺
 
-### A · PO（<你的姓名>）
+### A · PO（唐志烽）
 1. 维护 Product Backlog，保证每条故事有优先级与验收标准；
 2. 主持每次 Sprint Planning，明确 Sprint Goal；
 3. 主持每次 Sprint Review，用真实系统演示验收；
 4. 拒绝无依据的范围蔓延，并把拒绝理由写进 Backlog 变更记录。
 
-签名：_____________（commit message：`sign(team): <你的姓名> 承诺担任 PO`）
+签名：_____________（commit message：`sign(team): 唐志烽 承诺担任 PO`）
 
 ### B · SM（左焱之）
 1. 主持 Daily Standup 与 Retrospective，当场产出纪要；
